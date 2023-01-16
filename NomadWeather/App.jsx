@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { ScrollView, StyleSheet, Text, View, Dimensions, ActivityIndicator } from 'react-native';
 import * as Location from 'expo-location';
 import { useEffect, useState } from 'react';
-// https://openweathermap.org/api
 import { Fontisto } from '@expo/vector-icons';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -10,8 +9,8 @@ export default function App() {
   const [city, setCity] = useState('Loading...');
   const [days, setDays] = useState([]);
   const [ok, setOk] = useState(true);
-
-  const API_KEY = 'dca47a6ef327e0b6b0558674298a7b21';
+  // https://openweathermap.org/api
+  const API_KEY = '';
 
   const icons = {
     Clouds: 'cloudy',
