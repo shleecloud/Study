@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "850313904261",
+    "project_id": "fb-login-test-4e084",
+    "storage_bucket": "fb-login-test-4e084.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850313904261:android:29ae26351e1aaf208ba9ec",
+        "android_client_info": {
+          "package_name": "com.shleecloud.fb_login_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850313904261-dlm4gd80f6bk3p7n8ajcbe0qn7slq6mf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiWyRNqiEGeEp9GIBbqaH9QEggTMcNazs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "850313904261-dlm4gd80f6bk3p7n8ajcbe0qn7slq6mf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
