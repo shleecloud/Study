@@ -11,23 +11,23 @@
     <EditText
         android:id="@+id/emailArea"
         android:layout_margin="20dp"
-        android:hint="email"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:hint="email"
+        android:layout_height="50dp"/>
 
     <EditText
         android:id="@+id/passwordArea"
         android:layout_margin="20dp"
         android:hint="password"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"/>
 
     <Button
         android:id="@+id/joinBtn"
         android:text="회원가입"
+        android:layout_margin="20dp"
         android:padding="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp" />
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
