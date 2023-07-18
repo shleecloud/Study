@@ -1,4 +1,6 @@
 import {connectDB} from '@/util/database';
+import {getServerSession} from 'next-auth';
+import {authOptions} from '@/pages/api/auth/[...nextauth]';
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
@@ -6,9 +8,18 @@ export default async function handler(req, res) {
             return res.status(400).json({message: 'No title or content'});
         }
 
+        // login
+        const session = await getServerSession(req, res, authOptions);
+        if (session) {
+            req.body.author = session?.user.email;
+        } else {
+            return res.status(401).json({message: 'Unauthorized'});
+        }
+
+        // write to db
         try {
             const db = (await connectDB).db('forum');
-            const result = await db.collection('post').insertOne({title: req.body.title, content: req.body.content});
+            const result = await db.collection('post').insertOne(req.body);
 
             return res.redirect(302, '/list');
         } catch (e) {
