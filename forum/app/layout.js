@@ -21,7 +21,7 @@ export default async function RootLayout({children}) {
 
     /** * Pure Client Side Rendering
      * https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading#with-no-ssr */
-    const DynamicDarkMode = dynamic(() => import('@/app/DarkMode'), {ssr: false});
+    const DynamicDarkMode = dynamic(() => import('@/app/DarkMode'), {ssr: false, loading: () => <span> 🎨️</span>});
 
     return (
         <html lang="en">
