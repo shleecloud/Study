@@ -39,7 +39,7 @@ export default function Comment({parent}) {
         <div>
             <div>
                 <hr />
-                <h1>댓글 목록</h1>
+                <h1>Comments</h1>
                 <ul>
                     {comments.map((comment) => (
                         <li key={comment._id}>

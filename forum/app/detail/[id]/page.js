@@ -11,7 +11,7 @@ export default async function Detail(props) {
 
     return (
         <div className="detail-bg">
-            <h4>Detail</h4>
+            <h1>Detail</h1>
             <h4>{postContent?.title}</h4>
             <p>{postContent?.content}</p>
             <Comment parent={postId} />
