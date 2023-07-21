@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "24351002826",
+    "project_id": "mango-plate-project",
+    "storage_bucket": "mango-plate-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24351002826:android:7ade8a60b86c1a041f2433",
+        "android_client_info": {
+          "package_name": "com.shleecloud.mango_contents"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24351002826-n793dgnr4gjbel40mvd9p5sj1tmf9auf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC-MZUBWLOvQ5M7VTl9qOvPDLd-v5nFbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "24351002826-n793dgnr4gjbel40mvd9p5sj1tmf9auf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

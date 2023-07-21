@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "320801834814",
+    "project_id": "fb-email-password-auth-d64c3",
+    "storage_bucket": "fb-email-password-auth-d64c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320801834814:android:75120663896a2832b00e6f",
+        "android_client_info": {
+          "package_name": "com.shleecloud.fb_firebase_email_password_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320801834814-h1npiprdnsm950tc5unl0u6r215q86of.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA21UYoe_t-uBtj4Nf9oWN1Y-nzVJrvk7g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320801834814-h1npiprdnsm950tc5unl0u6r215q86of.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320801834814:android:fb7e3b7dff27e68eb00e6f",
+        "android_client_info": {
+          "package_name": "com.shleecloud.fb_login_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320801834814-h1npiprdnsm950tc5unl0u6r215q86of.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA21UYoe_t-uBtj4Nf9oWN1Y-nzVJrvk7g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320801834814-h1npiprdnsm950tc5unl0u6r215q86of.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
