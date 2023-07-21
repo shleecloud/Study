@@ -1,6 +1,0 @@
-{
-    "dependencies": {
-        "fs": "^0.0.1-security",
-        "prettier": "^2.8.8"
-    }
-}
