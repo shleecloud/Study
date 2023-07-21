@@ -1,0 +1,4 @@
+{
+    "typescript.tsdk": "./base-lazy-days/client/node_modules/typescript/lib",
+    "editor.tabSize": 2
+}
