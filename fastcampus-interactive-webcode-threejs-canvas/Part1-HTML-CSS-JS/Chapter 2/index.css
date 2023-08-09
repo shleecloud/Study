@@ -1,0 +1,174 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #24145E;
+}
+
+/*별이 돌아감*/
+@keyframes rotation {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+/*작아졌다가 커짐*/
+@keyframes shrinkAndGrow {
+    0% {
+        transform: scale(0);
+    }
+    25% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(0);
+    }
+    75% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+/*가로로 커짐*/
+@keyframes expandHorizontal {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes appearFromBottom {
+    from {
+        transform: translateY(1000px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes shakingUpAndDown {
+    from {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(5px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    75% {
+        transform: translateY(5px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes soaking {
+    to {
+        transform: translateY(-250px) scale(0);
+    }
+}
+
+@keyframes shrinkHorizontal {
+    to {
+        transform: scaleX(0);
+    }
+}
+
+
+/*돌아가는 행성*/
+#planet_1 {
+    animation: rotation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+#planet_2 {
+    animation: rotation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+/*작아졌다가 커지는 별*/
+#star_1 {
+    animation: shrinkAndGrow 9s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+#star_2 {
+    animation: shrinkAndGrow 5s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+#star_3 {
+    animation: shrinkAndGrow 6s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+#star_4 {
+    animation: shrinkAndGrow 4s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+#star_5 {
+    animation: shrinkAndGrow 10s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+#star_6 {
+    animation: shrinkAndGrow 12s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+#star_7 {
+    animation: shrinkAndGrow 7s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+#star_8 {
+    animation: shrinkAndGrow 8s infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+/*UFO 빔*/
+#UFO-beam {
+    animation: 3.5s expandHorizontal;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+#number-0 {
+    animation: 3s appearFromBottom;
+    animation-timing-function: cubic-bezier(.79,1.31,.82,-0.36);
+}
+
+#alien_hand-R, #alien_hand-L {
+    animation: shakingUpAndDown 1s infinite;
+    animation-timing-function: cubic-bezier(.35,.28,.82,.87);
+}
+
+#number-0-soaking {
+    animation: soaking 2s;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+#UFO-beam-disappearing {
+    animation: shrinkHorizontal 2s;
+    transform-box: fill-box;
+    transform-origin: center;
+}

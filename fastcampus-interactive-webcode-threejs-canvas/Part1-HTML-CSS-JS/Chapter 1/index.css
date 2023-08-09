@@ -222,7 +222,7 @@ main {
 
 #place-items-wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 308px);
+    grid-template-columns: repeat(5, 308px);
     justify-items: center;
     align-items: center;
     box-sizing: border-box;
