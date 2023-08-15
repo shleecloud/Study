@@ -57,18 +57,57 @@
             <li class="list-item">마이너스통장대출</li>
         </ul>
         <main>
+            <!--산타-->
             <section id="panel1-img">
                 <img id="flying-santa-image" src="./img/santa_flying.png" alt="santa flying" />
             </section>
+            <!--비디오 섹션-->
+            <section id="video-section">
+                <div id="fixed-wrapper">
+                    <video
+                        id="video"
+                        src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                        type="video/mp4"
+                        muted
+                        loop
+                    ></video>
+                    <div id="fixed-description">
+                        <div>혁신이 만든</div>
+                        <div>압도적인 성장</div>
+                    </div>
+                </div>
+            </section>
+            <!--샘플 텍스트가 보여지는 섹션-->
+            <div id="bank-beyond-wrapper">
+                <div id="bank-beyond">
+                    <img width="315" src="./img/05-text.png" alt="sample text" />
+                </div>
+            </div>
+            <!--흰화면으로 덮어씌우는 섹션-->
+            <div id="white-wrapper">
+                <!--사이드스크롤 섹션-->
+                <div id="slider-container">
+                    <div id="slider-content-wrapper">
+                        <div id="slider-content">
+                            <img src="https://picsum.photos/id/1/600/933" class="slider-image" alt="" />
+                            <img src="https://picsum.photos/id/59/600/933" class="slider-image" alt="" />
+                            <img src="https://picsum.photos/id/89/600/933" class="slider-image" alt="" />
+                        </div>
+                    </div>
+                    <div class="slider-button" id="left-button">&lt;</div>
+                    <div class="slider-button" id="right-button">&gt;</div>
+                    <div id="slider-index">1/3</div>
+                </div>
+            </div>
         </main>
     </body>
 
     <script>
         /** 화면이 내려갈 때 색이 입혀지는 애니메이션을 적용한다
-         * listStyleChangeStartY: list의 색이 입혀지기 시작하는 y좌표
-         * listStyleChangeEndY: list의 색이 입혀지기 끝나는 y좌표
+         * listStyleChangeStartY: list 색이 입혀지기 시작하는 y좌표
+         * listStyleChangeEndY: list 색이 입혀지기 끝나는 y좌표
          */
-        const listStyleChangeStartY = 373;
+        const listStyleChangeStartY = 573;
         const listStyleChangeEndY = 1585;
 
         const listItems = document.querySelectorAll('.list-item');
@@ -78,6 +117,45 @@
 
         const panel1Img = document.getElementById('panel1-img');
         const flyingSantaImage = document.getElementById('flying-santa-image');
+
+        // 비디오 섹션
+        // Playback는 비디오 1초당 이동할 px 단위를 의미함
+        const videoPlayBack = 500;
+        const videoElement = document.getElementById('video');
+        const videoSection = document.getElementById('video-section');
+
+        const fixedWrapper = document.getElementById('fixed-wrapper');
+        const fixedDescription = document.getElementById('fixed-description');
+
+        // 엘리먼트를 중앙에 고정해주는 이벤트를 부여하는 함수
+        function centerElement(elementId, video) {
+            const element = document.getElementById(elementId);
+            const parent = element.parentElement;
+
+            // * 화면 최상단이 내려오다가 부모의 y좌표 3524 - (뷰포트의 높이 690 - 엘리먼트의 높이 480) / 2 보다 커지면,
+            // * 엘리먼트를 중앙에 고정한다
+            if (window.scrollY > parent.offsetTop - (document.documentElement.clientHeight - element.offsetHeight) / 2) {
+                element.style.position = 'fixed';
+                element.style.top = '50%';
+                element.style.left = '50%';
+                element.style.transform = 'translate(-50%, -50%)';
+
+                // * 비디오가 있다면 고정된 스크롤에서 500px 당 1초씩 재생되도록 한다
+                if (video) video.currentTime = (window.scrollY - videoSection.offsetTop) / videoPlayBack;
+            } else {
+                element.style.position = 'relative';
+                element.style.top = 'initial';
+                element.style.left = 'initial';
+                element.style.transform = 'initial';
+            }
+        }
+
+        videoElement.addEventListener('loadedmetadata', () => {
+            document.getElementById('video-section').style.height = videoElement.duration * videoPlayBack + 'px';
+        });
+
+        const fixedDescriptionAppearTiming = 3470;
+        const fixedDescriptionAppearEnds = 3800;
 
         window.addEventListener('scroll', () => {
             // * 스크롤이 변할 때 list의 색이 입혀져 있다면, 기존에 입혀진 색을 제거한다
@@ -111,6 +189,71 @@
 
                 flyingSantaImage.style.transform = `translate(${translateX}px, ${translateY}px) rotate(${rotationDegree}deg)`;
             }
+
+            centerElement('fixed-wrapper', videoElement);
+
+            // * 동영상이 끝나는 스크롤 지점에서 다시 스크롤을 풀어줌
+            if (
+                window.scrollY >
+                videoSection.offsetTop +
+                    videoSection.offsetHeight -
+                    (fixedWrapper.offsetHeight + (document.documentElement.clientHeight - fixedWrapper.offsetHeight) / 2)
+            ) {
+                fixedWrapper.style.position = 'relative';
+                fixedWrapper.style.top = 'initial';
+                fixedWrapper.style.left = 'initial';
+                fixedWrapper.style.transform = `translateY(${videoSection.offsetHeight - fixedWrapper.offsetHeight}px)`;
+            }
+
+            // * 동영상 하단에 텍스트가 스르르 나타나는 애니메이션 적용
+            if (window.scrollY > fixedDescriptionAppearTiming && window.scrollY < fixedDescriptionAppearEnds) {
+                fixedDescription.style.transform = `translateY(${fixedDescriptionAppearEnds - window.scrollY}px)`;
+
+                fixedDescription.style.opacity = (window.scrollY - fixedDescriptionAppearTiming) / 300;
+            } else if (window.scrollY > fixedDescriptionAppearEnds) {
+                fixedDescription.style.transform = `translateY(0px)`;
+                fixedDescription.style.opacity = 1;
+            } else {
+                fixedDescription.style.transform = `translateY(100px)`;
+                fixedDescription.style.opacity = 0;
+            }
+
+            centerElement('bank-beyond');
+        });
+
+        // * 슬라이더 인덱스
+        let currentImage = 0;
+
+        const sliderImages = document.querySelectorAll('.slider-image');
+        const sliderIndex = document.getElementById('slider-index');
+
+        const handleSlideChange = (step) => {
+            currentImage += step;
+
+            if (currentImage < 0) {
+                currentImage = sliderImages.length - 1;
+            } else if (currentImage >= sliderImages.length) {
+                currentImage = 0;
+            }
+
+            sliderContentWrapper.scrollLeft = sliderImages[currentImage].offsetLeft;
+        };
+
+        document.getElementById('left-button').addEventListener('click', () => {
+            handleSlideChange(-1);
+        });
+        document.getElementById('right-button').addEventListener('click', () => {
+            handleSlideChange(1);
+        });
+
+        const sliderContentWrapper = document.getElementById('slider-content-wrapper');
+
+        // * 슬라이더 버튼이 아닌 스크롤 위치가 변할 때 슬라이더 인덱스가 변하도록 함
+        sliderContentWrapper.addEventListener('scroll', () => {
+            const imageWidth = document.querySelectorAll('.slider-image')[0].offsetWidth;
+
+            currentImage = Math.round(sliderContentWrapper.scrollLeft / imageWidth);
+            sliderIndex.innerText = `${currentImage + 1}/${sliderImages.length}`;
         });
     </script>
 </html>

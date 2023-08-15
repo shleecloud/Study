@@ -114,7 +114,7 @@ body {
     display: inline-block;
     background-image: url('./img/icons/dark_house.png');
     background-size: 51px 53px;
-    content: "";
+    content: ""; /* ? ::before는 content가 있어야 보인다*/
     width: 51px;
     height: 53px;
 }
@@ -140,6 +140,97 @@ body {
     right: -80px;
     height: 310px;
     transform: translate(80px, -13px) rotate(23deg);
+}
+
+/* * 비디오 섹션*/
+#video-section {
+    margin-bottom: 1000px;
+}
+
+#video {
+    display: block;
+    margin: 0 auto;
+    height: 350px;
+}
+
+/* * 비디오 나오면서 아래에서 떠오르는 텍스트*/
+#fixed-description {
+    width: 622px;
+    margin: 30px auto 0;
+    color: white;
+    text-align: right;
+    line-height: 50px;
+    font-size: 35px;
+    font-weight: 600;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+/*흰 화면으로 덮어씌워질 텍스트 이미지*/
+#bank-beyond-wrapper {
+    height: 380px;
+}
+
+#bank-beyond {
+    display: flex;
+    justify-content: center;
+}
+
+#white-wrapper {
+    padding-top: 80px;
+    position: relative;
+    background-color: #f7f7f7;
+    height: 1000px;
+    z-index: 10000;
+}
+
+/*슬라이드 이미지*/
+#slider-container {
+    margin: 0 auto;
+    position: relative;
+    width: 300px;
+}
+
+#slider-content-wrapper {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+#slider-content-wrapper::-webkit-scrollbar {
+    width: 0;
+}
+
+#slider-content {
+    display: flex;
+}
+
+.slider-image {
+    width: 300px;
+    height: 466px;
+    scroll-snap-align: center; /* 스크롤을 하면 자석처럼 이미지가 가운데로 오게끔*/
+}
+
+.slider-button {
+    position: absolute;
+    bottom: -110px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+#left-button {
+    left: 10px;
+}
+
+#right-button {
+    right: 10px;
+}
+
+#slider-index {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
