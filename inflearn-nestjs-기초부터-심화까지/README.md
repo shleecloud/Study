@@ -1,7 +1,7 @@
 # [인프런] 탄탄한 백엔드 NestJS! 기초부터 심화까지
 
 <p align="center">
-  <a href="https://www.inflearn.com/course/탄탄한-백엔드-네스트?inst=798f440e" target="blank"><kbd> <img src="./images/insta.png" width="300" alt="Nest" /></kbd></a>
+  <a href="https://www.inflearn.com/course/탄탄한-백엔드-네스트?inst=798f440e" target="blank"><kbd> <img src="complete/images/insta.png" width="300" alt="Nest" /></kbd></a>
 </p>
 
 <p align="center"><a href="https://www.inflearn.com/course/탄탄한-백엔드-네스트?inst=798f440e" target="_blank">강의 바로가기</a></p>
@@ -55,5 +55,5 @@ NestJS는 이런 아키텍처의 구조와 디자인 패턴을 프레임워크�
 NestJS 구조뿐만 아니라 각종 서비스에 공통적으로 존재하는 핵심 기능을 기반으로 한 “고양이 정보 커뮤니티” 실전 프로젝트 API를 클론 코딩합니다. 직접 프로젝트를 개발해 보면서 NestJS를 실제 실무에 적용할 수 있도록 도와드립니다.
 
 <p align="center">
-<img src="./images/ss.gif" alt="nest" width="700"  />
+<img src="complete/images/ss.gif" alt="nest" width="700"  />
 </p>
